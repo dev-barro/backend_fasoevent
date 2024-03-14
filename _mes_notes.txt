@@ -1,0 +1,12 @@
+1----------Mise d'un site Laravel en local--------
+2-Creer un point d'accès avec mon portable(activation du point d'accès du portable) 
+3-Connecter mon pc avec mon portable (creation reseau)
+4- Chercher l'adreesse ip de mon pc:
+-Windows: ipconfig
+linux : ifcong
+mac: ifconfig getifaddr en0
+5- ouvrir App Laravel et taper la coommande suivante:
+php artisan serve --host=0.0.0.0 -- port=8001
+6- ouvrir un navigateur sur mon portable (celui ayant creer le point point d'accès ) et tapez :
+adreesse(ip):8001
+
