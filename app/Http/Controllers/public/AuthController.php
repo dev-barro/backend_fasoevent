@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\public;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
@@ -18,8 +19,19 @@ class AuthController extends Controller
     }
     #fonction de gestion des inscriptions pour les promoteurs
     public function inscriptionPromoteurAction( Request $request){
-        dd($request->all(),$request->activites);
-        dd($request->nomcomplet);
+        $promoteur=User::create([
+            'nomcomplet'=> $request->nomcomplet,
+            'email'=> $request->email,
+            'password'=> $request->password,
+            'siege'=> $request->siege,
+            'telephone'=> $request->telephone,
+            'activities'=> $request->activites,
+            'role'=> "promoteur",
+            'status'=> "en_attente",
+            
+        ]);
+        #le return soute dessous nous redirige vers une route
+        return redirect()->route('public.inscription-promoteur');
 
     }
     public function inscriptionAbonne()

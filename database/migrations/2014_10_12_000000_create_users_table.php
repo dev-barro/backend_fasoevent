@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nom')->nullable();
             $table->string('prenom')->nullable();
             $table->string('email')->unique();
-            $table->string('adresse')->unique();
+            $table->string('adresse')->nullable();
             $table->enum('role',['admin','promoteur','abonné'])->default('abonne');
             $table->string('password');
             $table->string('telephone')->nullable();
