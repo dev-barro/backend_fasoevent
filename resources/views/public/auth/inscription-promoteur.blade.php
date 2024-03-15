@@ -25,6 +25,10 @@
                       </span>
                     </div>
                     <input type="text" name="nomcomplet" class="form-control form-control-lg border-left-0" placeholder=" entrez votre nom complet">
+                    @if ($errors->has('nomcomplet'))
+                    <span class="text-danger">{{ $errors->first('nomcomplet') }}</span>
+                        
+                    @endif
                   </div>
                 </div>
                 <div class="form-group">
@@ -36,6 +40,10 @@
                       </span>
                     </div>
                     <input type="email" name="email" class="form-control form-control-lg border-left-0" placeholder="Entrez votre Email">
+                    @if ($errors->has('email'))
+                    <span class="text-danger">{{ $errors->first('email') }}</span>
+                        
+                    @endif
                   </div>
                 </div>
                
@@ -47,7 +55,12 @@
                         <i class="mdi mdi-lock-outline text-primary"></i>
                       </span>
                     </div>
-                    <input type="password" name="password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Entrer votre mot de passe">                        
+                    <input type="password" name="password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Entrer votre mot de passe"> 
+                    @if ($errors->has('password'))
+                    <span class="text-danger">{{ $errors->first('password') }}</span>
+                        
+                    @endif 
+
                   </div>
                 </div>
                 <div class="form-group">
@@ -58,7 +71,11 @@
                         <i class="mdi mdi-lock-outline text-primary"></i>
                       </span>
                     </div>
-                    <input type="text" name="adresse" class="form-control form-control-lg border-left-0" id="exampleInputAdresse" placeholder="Entrer votre adresse">                        
+                    <input type="text" name="adresse" class="form-control form-control-lg border-left-0" id="exampleInputAdresse" placeholder="Entrer votre adresse"> 
+                    @if ($errors->has('adresse'))
+                    <span class="text-danger">{{ $errors->first('adresse') }}</span>
+                        
+                    @endif                       
                   </div>
                 </div>
                 <div class="form-group">
@@ -69,7 +86,11 @@
                         <i class="mdi mdi-lock-outline text-primary"></i>
                       </span>
                     </div>
-                    <input type="text" name="siege" class="form-control form-control-lg border-left-0" id="exampleInputSiege" placeholder="Entrer votre siège">                        
+                    <input type="text" name="siege" class="form-control form-control-lg border-left-0" id="exampleInputSiege" placeholder="Entrer votre siège">  
+                    @if ($errors->has('siege'))
+                    <span class="text-danger">{{ $errors->first('siege') }}</span>
+                        
+                    @endif                      
                   </div>
                 </div>
                 <div class="form-group">
@@ -81,6 +102,10 @@
                       </span>
                     </div>
                     <textarea name="activites" class="form-control form-control-lg border-left-0" placeholder="Entrez vos domaine d'activités" id="" cols="15" rows="5"></textarea>
+                    @if ($errors->has('activites'))
+                    <span class="text-danger">{{ $errors->first('activites') }}</span>
+                        
+                    @endif 
                   </div>
                 </div>
                 <div class="form-group">
@@ -91,7 +116,11 @@
                         <i class="mdi mdi-lock-outline text-primary"></i>
                       </span>
                     </div>
-                    <input type="number" name="telephone" class="form-control form-control-lg border-left-0" id="exampleInputSiege" placeholder="Entrer votre téléphone">                        
+                    <input type="number" name="telephone" class="form-control form-control-lg border-left-0" id="exampleInputSiege" placeholder="Entrer votre téléphone"> 
+                    @if ($errors->has('telephone'))
+                    <span class="text-danger">{{ $errors->first('telephone') }}</span>
+                        
+                    @endif                       
                   </div>
                 </div>
                 <div class="mb-4">
