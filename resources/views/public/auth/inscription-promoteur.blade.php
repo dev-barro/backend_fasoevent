@@ -11,10 +11,11 @@
                 <a href="{{ route('accueil') }}">
                   <img src="{{ asset('assets_private/images/logo.svg') }}" alt="logo">
                 
-                  </a>                 </div>
+                  </a> </div>
               <h4>inscription Promoteur</h4>
               <h6 class="font-weight-light">Veuiller entré vos coordonnés pour créer un compte</h6>
-              <form class="pt-3">
+              <form class="pt-3" action="{{ route ('public.inscription-promoteur-action') }}" method="POST">
+                @csrf
                 <div class="form-group">
                   <label>Nom complet</label>
                   <div class="input-group">
@@ -23,7 +24,7 @@
                         <i class="mdi mdi-account-outline text-primary"></i>
                       </span>
                     </div>
-                    <input type="text" class="form-control form-control-lg border-left-0" placeholder=" entrez votre nom complet">
+                    <input type="text" name="nomcomplet" class="form-control form-control-lg border-left-0" placeholder=" entrez votre nom complet">
                   </div>
                 </div>
                 <div class="form-group">
@@ -34,7 +35,7 @@
                         <i class="mdi mdi-email-outline text-primary"></i>
                       </span>
                     </div>
-                    <input type="email" class="form-control form-control-lg border-left-0" placeholder="Entrez votre Email">
+                    <input type="email" name="email" class="form-control form-control-lg border-left-0" placeholder="Entrez votre Email">
                   </div>
                 </div>
                
@@ -46,7 +47,7 @@
                         <i class="mdi mdi-lock-outline text-primary"></i>
                       </span>
                     </div>
-                    <input type="password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Entrer votre mot de passe">                        
+                    <input type="password" name="password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Entrer votre mot de passe">                        
                   </div>
                 </div>
                 <div class="form-group">
@@ -57,7 +58,7 @@
                         <i class="mdi mdi-lock-outline text-primary"></i>
                       </span>
                     </div>
-                    <input type="text" class="form-control form-control-lg border-left-0" id="exampleInputAdresse" placeholder="Entrer votre adresse">                        
+                    <input type="text" name="adresse" class="form-control form-control-lg border-left-0" id="exampleInputAdresse" placeholder="Entrer votre adresse">                        
                   </div>
                 </div>
                 <div class="form-group">
@@ -68,7 +69,7 @@
                         <i class="mdi mdi-lock-outline text-primary"></i>
                       </span>
                     </div>
-                    <input type="text" class="form-control form-control-lg border-left-0" id="exampleInputSiege" placeholder="Entrer votre siège">                        
+                    <input type="text" name="siege" class="form-control form-control-lg border-left-0" id="exampleInputSiege" placeholder="Entrer votre siège">                        
                   </div>
                 </div>
                 <div class="form-group">
@@ -79,7 +80,7 @@
                         <i class="mdi mdi-lock-outline text-primary"></i>
                       </span>
                     </div>
-                    <textarea name=""class="form-control form-control-lg border-left-0" placeholder="Entrez vos domaine d'activités" id="" cols="15" rows="5"></textarea>
+                    <textarea name="activites" class="form-control form-control-lg border-left-0" placeholder="Entrez vos domaine d'activités" id="" cols="15" rows="5"></textarea>
                   </div>
                 </div>
                 <div class="form-group">
@@ -90,7 +91,7 @@
                         <i class="mdi mdi-lock-outline text-primary"></i>
                       </span>
                     </div>
-                    <input type="number" class="form-control form-control-lg border-left-0" id="exampleInputSiege" placeholder="Entrer votre téléphone">                        
+                    <input type="number" name="telephone" class="form-control form-control-lg border-left-0" id="exampleInputSiege" placeholder="Entrer votre téléphone">                        
                   </div>
                 </div>
                 <div class="mb-4">
@@ -102,7 +103,7 @@
                   </div>
                 </div>
                 <div class="mt-3">
-                  <a class="btn btn-block btn-primary w-100 text-white btn-lg font-weight-medium auth-form-btn" href="../../index.html">S'inscrire</a>
+                  <button class="btn btn-block btn-primary w-100 text-white btn-lg font-weight-medium auth-form-btn" type="submit">S'inscrire</button>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
                   S'incrire en tant que abonné <a href="{{route('public.inscription-abonne') }}" class="text-primary">Aller</a>

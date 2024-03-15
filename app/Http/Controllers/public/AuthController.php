@@ -11,9 +11,16 @@ class AuthController extends Controller
     {
         return view('public.auth.inscription-option');
     }
+    
     public function inscriptionPromoteur()
     {
         return view('public.auth.inscription-promoteur');
+    }
+    #fonction de gestion des inscriptions pour les promoteurs
+    public function inscriptionPromoteurAction( Request $request){
+        dd($request->all(),$request->activites);
+        dd($request->nomcomplet);
+
     }
     public function inscriptionAbonne()
     {
