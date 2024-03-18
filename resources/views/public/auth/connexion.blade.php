@@ -23,7 +23,8 @@
   </a>              </div>
               <h4>Connexion</h4>
               <h6 class="font-weight-light">Veuillez entré vos coordonnées pour vous connecter</h6>
-              <form class="pt-3">
+              <form action="{{ route('public.connexion-action') }}" method="POST" class="pt-3">
+                @csrf
                 <div class="form-group">
                   <label for="exampleInputEmail">Email</label>
                   <div class="input-group">
@@ -32,7 +33,7 @@
                         <i class="mdi mdi-account-outline text-primary"></i>
                       </span>
                     </div>
-                    <input type="text" class="form-control form-control-lg border-left-0" id="exampleInputEmail" placeholder="Entrer votre Email">
+                    <input type="text" name="email" class="form-control form-control-lg border-left-0" id="exampleInputEmail" placeholder="Entrer votre Email">
                   </div>
                 </div>
                 <div class="form-group">
@@ -43,12 +44,12 @@
                         <i class="mdi mdi-lock-outline text-primary"></i>
                       </span>
                     </div>
-                    <input type="password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Votre mot de passe">                        
+                    <input type="password" name="password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Votre mot de passe">                        
                   </div>
                 </div>
                 
                 <div class="my-3">
-                  <a class="btn btn-block w-100 text-white btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">Connexion</a>
+                  <button class="btn btn-block w-100 text-white btn-primary btn-lg font-weight-medium auth-form-btn" type="submit">Connexion</button>
                 </div>
                
                 <div class="text-center mt-4 font-weight-light">

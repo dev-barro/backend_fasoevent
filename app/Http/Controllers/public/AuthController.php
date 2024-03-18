@@ -134,5 +134,11 @@ class AuthController extends Controller
     public function connexion()
     {
         return view('public.auth.connexion');
+
+    }
+
+
+public function connexionAction(Request $request){
+    dd($request->all());
     }
 }
